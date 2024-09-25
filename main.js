@@ -89,8 +89,10 @@ function addTodoItem() {
         trashcan.addEventListener("click", function () {
             todoArray.splice(todoArray.indexOf(todoObject), 1);
             todoItem.remove();
-            completedCount--;
-            countTodo.innerText = `${completedCount} Completed`;
+           if (todoItem.getAttribute("class") == "completed") {
+                completedCount--;
+                countTodo.innerText = `${completedCount} Completed`;
+            }
         });
 
 
